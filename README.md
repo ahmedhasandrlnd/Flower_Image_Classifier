@@ -42,26 +42,26 @@ In our training, we've used DenseNet model (densenet161 and densenet201) and got
 After we've built and trained a deep neural network on the flower data set, we've converted it into an application that others can use. Our application should be a pair of Python scripts that run from the command line. For testing, we used the checkpoint we saved in the first part.
 
 The project submission included three files train.py, predict.py and utilites.py. The first file, train.py, train a new network on a dataset and save the model as a checkpoint. The second file, predict.py, uses a trained network to predict the class for an input image. The third file, utilies.py, contains functions and classes relating to the model and utility functions like loading data and preprocessing images. 
-	* Train a new network on a data set with train.py
-		* Basic usage: 
-		```
-		python train.py data_directory
-		```
-	* Prints out training loss, validation loss, and validation accuracy as the network trains
-	* Options:
-		* Set directory to save checkpoints: 
-		```
-		python train.py data_dir --save_dir save_directory
-		```
-		* Choose architecture: 
-		```
-		python train.py data_dir --arch "vgg13"
-		```
-		* Set hyperparameters: 
-		```
-		python train.py data_dir --learning_rate 0.01 --hidden_units 512 --epochs 20
-		```
-		* Use GPU for training: 
-		```
-		python train.py data_dir --gpu
-		```
+* Train a new network on a data set with train.py
+	* Basic usage: 
+	```
+	python train.py data_directory
+	```
+* Prints out training loss, validation loss, and validation accuracy as the network trains
+* Options:
+	* Set directory to save checkpoints: 
+	```
+	python train.py data_dir --save_dir save_directory
+	```
+	* Choose architecture: 
+	```
+	python train.py data_dir --arch "vgg13"
+	```
+	* Set hyperparameters: 
+	```
+	python train.py data_dir --learning_rate 0.01 --hidden_units 512 --epochs 20
+	```
+	* Use GPU for training: 
+	```
+	python train.py data_dir --gpu
+	```
