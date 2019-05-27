@@ -55,11 +55,11 @@ The project submission included three files train.py, predict.py and utilites.py
 	```
 	* Choose architecture: 
 	```
-	python train.py data_dir --arch "vgg13"
+	python train.py data_dir --arch "densenet161"
 	```
 	* Set hyperparameters: 
 	```
-	python train.py data_dir --learning_rate 0.01 --hidden_units 512 --epochs 20
+	python train.py data_dir --learning_rate 0.001 --hidden_units 512 --epochs 30
 	```
 	* Use GPU for training: 
 	```
