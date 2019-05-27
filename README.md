@@ -27,13 +27,13 @@ In our training, we've used DenseNet model (densenet161 and densenet201) and got
 | :--------------------: | :---------------: | :--------------: | :--------------: | :--------------: | 
 | Pretrained Densenet161 |      97.31%       |      2.69%       |      0.73%       |      0.24%       |
 
-### Correctly Classified Images
+### One Correctly Classified Image
 ![Correctly Classifid](correct_1.PNG)
 
-### Top-3 Error Image
+### One Top-3 Error Image
 ![Top-3 Error](top_3_1.PNG)
 
-### Top-5 Error Image
+### One Top-5 Error Image
 ![Top-5 Error](top_5_2.PNG)
 
 
