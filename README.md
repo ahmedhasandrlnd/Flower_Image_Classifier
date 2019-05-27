@@ -2,7 +2,7 @@
 
 In this project, we've built a Python application that can train an deep-learning flower image classifier on a dataset, then predict new flower images using the trained model. In the foirst part of the project, we've developed our code in a Jupyter notebook to make sure our implementaion works.In the second part, we've converted the code in a Python application that runs form the command line. 
 
-## Part 1- Developing a Image Classifer with Deep Learning
+## Part 1: Developing a Image Classifer with Deep Learning
 
 In this notebook, we've learned how to use pre-trained networks to solved challenging problems in computer vision such as Flower Image Classification. Specifically, we've used networks trained on ImageNet available from torchvision.
 
@@ -10,7 +10,7 @@ ImageNet is a massive dataset with over 1 million labeled images in 1000 categor
 
 Most of the pretrained models require the input to be 224x224 images. Also, we'll need to match the normalization used when the models were trained. Each color channel was normalized separately, the means are [0.485, 0.456, 0.406] and the standard deviations are [0.229, 0.224, 0.225].
 
-This model is built out of two main parts, the features and the classifier. The features part is a stack of convolutional layers and overall works as a feature detector that can be fed into a classifier. The classifier part is a single fully-connected layer (classifier): Linear(in_features=1024, out_features=1000). Since in our problem, we have 102 flower species in the our training dataset, so it won't work for our specific problem. That means we need to replace the classifier, but the features will work perfectly on their own. Just need to make sure we are only training the classifier and the parameters for the features part are frozen.
+This model is built out of two main parts, the features and the classifier. The features part is a stack of convolutional layers and overall works as a feature detector that can be fed into a classifier. The classifier part is a single fully-connected layer (classifier): Linear(in_features=2208, out_features=1000). Since in our problem, we have 102 flower species in the our training dataset, so it won't work for our specific problem. That means we need to replace the classifier, but the features will work perfectly on their own. Just need to make sure we are only training the classifier and the parameters for the features part are frozen.
 
 In our training, we've used DenseNet model (densenet161 and densenet201) and got an accuracy over 97% on the testing dataset. Some hyperparameter settings, statistics and inference results are given below:
 
@@ -37,3 +37,31 @@ In our training, we've used DenseNet model (densenet161 and densenet201) and got
 ![Top-5 Error](top_5_2.PNG)
 
 
+## Part 2: Building the command line application
+
+After we've built and trained a deep neural network on the flower data set, we've converted it into an application that others can use. Our application should be a pair of Python scripts that run from the command line. For testing, we used the checkpoint we saved in the first part.
+
+The project submission included three files train.py, predict.py and utilites.py. The first file, train.py, train a new network on a dataset and save the model as a checkpoint. The second file, predict.py, uses a trained network to predict the class for an input image. The third file, utilies.py, contains functions and classes relating to the model and utility functions like loading data and preprocessing images. 
+	* Train a new network on a data set with train.py
+		* Basic usage: 
+		```
+		python train.py data_directory
+		```
+	* Prints out training loss, validation loss, and validation accuracy as the network trains
+	* Options:
+		* Set directory to save checkpoints: 
+		```
+		python train.py data_dir --save_dir save_directory
+		```
+		* Choose architecture: 
+		```
+		python train.py data_dir --arch "vgg13"
+		```
+		* Set hyperparameters: 
+		```
+		python train.py data_dir --learning_rate 0.01 --hidden_units 512 --epochs 20
+		```
+		* Use GPU for training: 
+		```
+		python train.py data_dir --gpu
+		```
