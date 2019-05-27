@@ -34,6 +34,6 @@ In our training, we've used DenseNet model (densenet161 and densenet201) and got
 ![Top-3 Error](top_3_1.PNG)
 
 ### Top-5 Error Image
-![Top-5 Error](top_5_1.PNG)
+![Top-5 Error](top_5_2.PNG)
 
 
