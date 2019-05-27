@@ -47,24 +47,24 @@ The project submission included three files train.py, predict.py and utilites.py
 	```
 	python train.py data_directory
 	```
-* Prints out training loss, validation loss, and validation accuracy as the network trains
-* Options:
-	* Set directory to save checkpoints: 
-	```
-	python train.py data_dir --save_dir save_directory
-	```
-	* Choose architecture: 
-	```
-	python train.py data_dir --arch "densenet161"
-	```
-	* Set hyperparameters: 
-	```
-	python train.py data_dir --learning_rate 0.001 --hidden_units 512 --epochs 30
-	```
-	* Use GPU for training: 
-	```
-	python train.py data_dir --gpu
-	```
+	* Prints out training loss, validation loss, and validation accuracy as the network trains
+	* Options:
+		* Set directory to save checkpoints: 
+		```
+		python train.py data_dir --save_dir save_directory
+		```
+		* Choose architecture: 
+		```
+		python train.py data_dir --arch "densenet161"
+		```
+		* Set hyperparameters: 
+		```
+		python train.py data_dir --learning_rate 0.001 --hidden_units 512 --epochs 30
+		```
+		* Use GPU for training: 
+		```
+		python train.py data_dir --gpu
+		```
 * Predict flower name from an image with predict.py along with the probability of that name. That is, we'll pass in a single image /path/to/image and return the flower name and class probability.
 	* Basic usage: 
 	```
